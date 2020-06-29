@@ -35,11 +35,13 @@ function addItems () {
 // Method to render the list on to the page
 function renderItems() {
     console.log('In renderItems: ');
+
+    document.getElementById('itemToAdd').value = "";
     let todos = getItems();
  
     let html = '<ul>';
     for(let i=0; i<todos.length; i++) {
-        html += '<li>' + todos[i] + '<button class="remove" id="' + i  + '">x</button></li>';
+        html += '<li>' + todos[i] + '<button class="remove" id="' + i + ' ">X</button></li>';
     };
     html += '</ul>';
  
@@ -49,6 +51,8 @@ function renderItems() {
     for (let i=0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', clearItem);
     };
+
+
 }
 
 // Method to remove items from the list
